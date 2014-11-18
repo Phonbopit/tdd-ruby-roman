@@ -6,12 +6,19 @@ require "minitest/pride"
 
 def roman(n)
 
-	return "V" if n == 5
-	return "VI" if n == 6
-	return "VII" if n == 7
-	return "X" if n == 10
+	roman = ""
 
-	return "I" * n
+	while n >= 5 do
+		if n == 10
+			roman = "X"
+		else 
+			roman += "V"
+		end
+		
+		n %= 5
+	end
+
+	return roman + ("I" * n)
 end
 
 describe "roman" do
