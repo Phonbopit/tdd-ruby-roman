@@ -8,17 +8,40 @@ def roman(n)
 
 	roman = ""
 
-	while n >= 5 do
-		if n == 10
-			roman = "X"
-		else 
+	while n > 0 do
+
+		if n >= 1000
+			roman += "M"
+			n -= 1000
+		elsif n >= 500
+			roman += "D"
+			n -= 500
+		elsif n >= 100
+			roman += "C"
+			n -= 100
+		elsif n >= 90
+			roman += "XC"
+			n -= 90
+		elsif n >= 50
+			roman += "L"
+			n -= 50
+		elsif n >= 10
+			roman += "X"
+			n -= 10
+		elsif n >= 5
 			roman += "V"
+			n -= 5
+		elsif n >= 4
+			roman += "IV"
+			n -= 4
+		else
+			roman += "I" *n
+			n = 0
 		end
-		
-		n %= 5
+
 	end
 
-	return roman + ("I" * n)
+	return roman
 end
 
 describe "roman" do
@@ -34,8 +57,8 @@ describe "roman" do
 		roman(3).must_equal "III"
 	end
 
-	it "converts the number 4 to the string IIII" do
-		roman(4).must_equal "IIII"
+	it "converts the number 4 to the string IV" do
+		roman(4).must_equal "IV"
 	end
 
 	it "converts the number 5 to the string V" do
@@ -53,6 +76,14 @@ describe "roman" do
 	it "converts the number 10 to the string X" do
 		roman(10).must_equal "X"
 	end
+
+	it "converts the number 14 to the string XIV" do
+		roman(14).must_equal "XIV"
+	end
+
+	it "converts the number 2896 to the string MMDCCCXCVI" do
+		roman(2896).must_equal "MMDCCCXCVI"
+	end 
 
 end
 
