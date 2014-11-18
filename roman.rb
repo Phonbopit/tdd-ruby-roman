@@ -31,5 +31,9 @@ describe "roman" do
 		roman(5).must_equal "V"
 	end
 
+	it "converts the number 6 to the string VI" do
+		roman(6).must_equal "VI"
+	end
+
 end
 
