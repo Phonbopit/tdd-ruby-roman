@@ -25,5 +25,9 @@ describe "roman" do
 		roman(4).must_equal "IIII"
 	end
 
+	it "converts the number 5 to the string V" do
+		roman(5).must_equal "V"
+	end
+
 end
 
