@@ -5,6 +5,8 @@ require "minitest/autorun"
 require "minitest/pride"
 
 def roman(n)
+	return "V" if n == 5
+	
 	return "I" * n
 end
 
