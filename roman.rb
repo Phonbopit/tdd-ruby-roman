@@ -5,7 +5,7 @@ require "minitest/autorun"
 require "minitest/pride"
 
 def roman(n)
-	return "I"
+	return "I" * n
 end
 
 describe "roman" do
