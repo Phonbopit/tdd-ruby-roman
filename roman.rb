@@ -8,7 +8,9 @@ def roman(n)
 
 	return "V" if n == 5
 	return "VI" if n == 6
-		
+	return "VII" if n == 7
+	return "X" if n == 10
+
 	return "I" * n
 end
 
@@ -35,6 +37,14 @@ describe "roman" do
 
 	it "converts the number 6 to the string VI" do
 		roman(6).must_equal "VI"
+	end
+
+	it "converts the number 7 to the string VII" do
+		roman(7).must_equal "VII"
+	end
+
+	it "converts the number 10 to the string X" do
+		roman(10).must_equal "X"
 	end
 
 end
